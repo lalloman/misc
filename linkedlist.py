@@ -1,36 +1,17 @@
-class linkedlistnode:
-  def __init__(self,value,nextnode = None):
-    self.value = value
-    self.nextnode = nextnode
+class Node:
+   def __init__(self, dataval=None):
+      self.dataval = dataval
+      self.nextval = None
 
-class linkedlist:
-  def __init__(self,head = None):
-    self.head = head
+class SLinkedList:
+   def __init__(self):
+      self.headval = None
 
-  def insertnew(self,value):
-    node = linkedlistnode(value)
-    if self.head is None:
-      self.head = node
-      return
-    currentnode = self.head
-    while True:
-      if currentnode.nextnode is None:
-        currentnode.nextnode = node
-        break
-      currentnode = currentnode.nextnode
-      print("None")
+list1 = SLinkedList()
+list1.headval = Node("first item")
+e2 = Node("second item")
+e3 = Node("third item")
 
+list1.headval.nextval = e2
 
-  def printl(self):
-    currentnode = self.head
-    while currentnode is not None:
-      print(currentnode.value,"->",end = "")
-      currentnode = currentnode.nextnode
-    print ("None")
-
-
-ll = linkedlist()
-ll.insertnew(5)
-ll.insertnew(8)
-ll.insertnew(9)
-ll.printl()
+e2.nextval = e3
